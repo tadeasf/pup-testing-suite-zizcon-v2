@@ -1,0 +1,33 @@
+# Enable Control Port
+ControlPort 0.0.0.0:9051
+# Enable SOCKS proxy
+SocksPort 0.0.0.0:9050 IsolateDestAddr IsolateDestPort
+
+# Generate password hash using: tor --hash-password "your_chosen_password"
+HashedControlPassword 16:748EE2B1CB4FBB3760AD606A7A827054EA8C934FF53A16CBB3077E7C23
+CookieAuthentication 0
+
+# Data directory
+DataDirectory /var/lib/tor
+DataDirectoryGroupReadable 1
+
+# Recommended settings for better anonymity
+MaxCircuitDirtiness 60  # New circuit every 60 seconds
+EnforceDistinctSubnets 1
+NewCircuitPeriod 60
+CircuitBuildTimeout 60
+
+# Exit node configuration
+StrictNodes 1
+ExitNodes {us},{gb},{de},{fr},{nl} # Restrict to these countries
+ExcludeNodes {cn},{ru},{ir},{kp},{sy} # Exclude these countries
+
+# Performance tuning
+NumCPUs 2
+HardwareAccel 1
+AvoidDiskWrites 1
+ConnectionPadding 1
+
+# Container-specific settings
+RunAsDaemon 0
+User tor

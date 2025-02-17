@@ -1,0 +1,131 @@
+services:
+  tor-0:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8050:9051"  # Control port
+      - "9050:9050"  # SOCKS port
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor0_data:/var/lib/tor
+    restart: unless-stopped
+  tor-1:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8051:9051"  # Control port
+      - "9051:9050"  # SOCKS port
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor1_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-2:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8052:9051"
+      - "9052:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor2_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-3:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8053:9051"
+      - "9053:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor3_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-4:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8054:9051"
+      - "9054:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor4_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-5:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8055:9051"
+      - "9055:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor5_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-6:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8056:9051"
+      - "9056:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor6_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-7:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8057:9051"
+      - "9057:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor7_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-8:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8058:9051"
+      - "9058:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor8_data:/var/lib/tor
+    restart: unless-stopped
+
+  tor-9:
+    image: dperson/torproxy
+    environment:
+      - TOR_USER=tor
+    ports:
+      - "8059:9051"
+      - "9059:9050"
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor9_data:/var/lib/tor
+    restart: unless-stopped
+
+volumes:
+  tor0_data:
+  tor1_data:
+  tor2_data:
+  tor3_data:
+  tor4_data:
+  tor5_data:
+  tor6_data:
+  tor7_data:
+  tor8_data:
+  tor9_data:

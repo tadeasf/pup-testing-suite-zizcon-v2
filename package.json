@@ -1,0 +1,21 @@
+{
+  "name": "pup-testing-suite",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.19",
+    "proxy-chain": "^2.4.0",
+    "puppeteer": "^24.2.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "typescript": "^5.3.3",
+    "zustand": "^5.0.3"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "test": "bun run src/lib/test.ts"
+  }
+}
